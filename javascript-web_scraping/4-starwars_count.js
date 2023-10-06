@@ -9,7 +9,12 @@ request.get(apiUrl, function(error, response, body) {
 		console.log(error);
 	}
 	else {
-		console.log(JSON.parse(body).results);
-	}
+		 data = JSON.parse(res.body).results;
+    data.forEach((obj) => {
+      obj.characters.forEach((character) => {
+        if (character.includes('/18/')) count++;
+      });
+    });
+  }
+  console.log(count);
 });
-
