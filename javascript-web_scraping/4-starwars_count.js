@@ -1,0 +1,15 @@
+#!/usr/bin/node
+
+const request = require('request');
+const apiUrl = process.argv[2];
+const characterId = 18;
+
+request.get(apiUrl, function(error, response, body) {
+	if (error) {
+		console.log(error);
+	}
+	else {
+		console.log(JSON.parse(body).results);
+	}
+});
+
