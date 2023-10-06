@@ -6,8 +6,10 @@ const apiUrl = `https://swapi-api.alx-tools.com/api/films/` + episodeId;
 
 request.get(apiUrl, function(error, response, body) => {
 	if (error) {
-		console.log(error);}
+		console.log(error);
+	}
 	else {
-		console.log(JSON.parse(res.body).title);}
+		console.log(JSON.parse(body).title);
+	}
 });
 
