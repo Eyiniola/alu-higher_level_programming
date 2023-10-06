@@ -18,4 +18,3 @@ request.get(url, (err, res) => {
   }
   console.log(count);
 });
-

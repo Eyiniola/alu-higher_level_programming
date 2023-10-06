@@ -30,4 +30,3 @@ req.get(url, (err, res) => {
   });
   console.log(results);
 });
-
