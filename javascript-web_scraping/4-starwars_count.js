@@ -1,15 +1,15 @@
 #!/usr/bin/node
 
-const request = require('request');
-const apiUrl = process.argv[2];
-const characterId = 18;
+const request = require('request')
+const url = process.argv[2];
+let count = 0;
+let data;
 
-request.get(apiUrl, function(error, response, body) {
-	if (error) {
-		console.log(error);
-	}
-	else {
-		 data = JSON.parse(res.body).results;
+request.get(url, (err, res) => {
+  if (err) {
+    console.log(err);
+  } else {
+    data = JSON.parse(res.body).results;
     data.forEach((obj) => {
       obj.characters.forEach((character) => {
         if (character.includes('/18/')) count++;
@@ -18,3 +18,4 @@ request.get(apiUrl, function(error, response, body) {
   }
   console.log(count);
 });
+
